@@ -1,6 +1,3 @@
-limit_soft_core: 102400
-limit_hard_core: 102400
-limit_soft_nofile: 65535
-limit_hard_nofile: 65535
-limit_soft_nproc: 65535
-limit_hard_nproc: 65535
+limit_core: 102400
+limit_nofile: 65535
+limit_nproc: 65535

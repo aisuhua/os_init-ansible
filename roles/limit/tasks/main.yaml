@@ -1,23 +1,16 @@
-- name: set /etc/security/limits.conf
-  lineinfile:
-    path: /etc/security/limits.conf
-    regexp: "{{ item.regexp }}"
-    line: "{{ item.line }}"
-    state: present
-    backup: true
-  with_items:
-    - regexp: '^\*\s+soft\s+core\s+'
-      line: '* soft core {{ limit_soft_core }}'
-    - regexp: '^\*\s+hard\s+core\s+'
-      line: '* hard core {{ limit_hard_core }}'
-    - regexp: '^\*\s+soft\s+nofile\s+'
-      line: '* soft nofile {{ limit_soft_nofile }}'
-    - regexp: '^\*\s+hard\s+nofile\s+'
-      line: '* hard nofile {{ limit_hard_nofile }}'
-    - regexp: '^\*\s+soft\s+nproc\s+'
-      line: '* soft nproc {{ limit_soft_nproc }}'
-    - regexp: '^\*\s+hard\s+nproc\s+'
-      line: '* hard nproc {{ limit_hard_nproc }}'
+- name: configure /etc/security/limits.conf
+  pam_limits:
+    domain: '*'
+    limit_type: '-'
+    limit_item: "{{ item.limit_item }}"
+    value: "{{ item.value }}"
+  loop:
+    - limit_item: core
+      value: "{{ limit_core }}"
+    - limit_item: nofile
+      value: "{{ limit_nofile }}"
+    - limit_item: nproc
+      value: "{{ limit_nproc }}"
 
 - name: set /etc/systemd/system.conf
   lineinfile:
@@ -28,8 +21,8 @@
     backup: true
   with_items:
     - regexp: '^DefaultLimitCORE'
-      line: 'DefaultLimitCORE={{ limit_soft_core }}:{{ limit_hard_core }}'
+      line: 'DefaultLimitCORE={{ limit_core }}:{{ limit_core }}'
     - regexp: '^DefaultLimitNOFILE'
-      line: 'DefaultLimitNOFILE={{ limit_soft_nofile }}:{{ limit_hard_nofile }}'
+      line: 'DefaultLimitNOFILE={{ limit_nofile }}:{{ limit_nofile }}'
     - regexp: '^DefaultLimitNPROC'
-      line: 'DefaultLimitNPROC={{ limit_soft_nproc }}:{{ limit_hard_nproc }}'
+      line: 'DefaultLimitNPROC={{ limit_nproc }}:{{ limit_nproc }}'

@@ -56,12 +56,9 @@ init_pkg_list:
   - sysstat
   - iptables-services
 
-limit_soft_core: 102400
-limit_hard_core: 102400
-limit_soft_nofile: 65535
-limit_hard_nofile: 65535
-limit_soft_nproc: 65535
-limit_hard_nproc: 65535
+limit_core: 102400
+limit_nofile: 65535
+limit_nproc: 65535
 
 safe_pass_max_days: 99999
 safe_pass_min_days: 0
