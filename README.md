@@ -13,30 +13,29 @@ cd os_init-ansible
 vim hosts.ini
 vim group_vars/all.yaml
 
-ansible-playbook.yaml
+ansible-playbook playbook.yaml
 ```
 
 ## Roles 清单
 
 ```sh
-roles:
-  - init
-  - hostname
-  - timezone
-  - dns
-  - chrony
-  - user
-  - file
-  - profile
-  - repo
-  - init_pkg
-  - selinux
-  - iptables
-  - limit
-  - ssh
-  - safe
-  - disable_services
-  - cron
+init
+hostname
+timezone
+dns
+chrony
+user
+file
+profile
+repo
+init_pkg
+selinux
+iptables
+limit
+ssh
+safe
+disable_services
+cron
 ```
 
 ## 特点
