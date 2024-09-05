@@ -87,3 +87,11 @@ $ tree /data/mirror -L 4
 ```
 
 RPM 包按照 `os/linux/[发行版|共享目录]/[版本|共享目录]/[iso|base|updates|addons|loophole]/架构/Packages/*.rpm` 这样的目录结构存放。其中发行版有 kylin 和 rhel 两种，共享目录有 `common-addons`、`common-loopholes` 和 `common-updates`，它们为不同发行版和版本的操作系统共享 rpm 包提供了可能，其中 `common-addons` 是存放第三方软件 rpm 包的位置，`common-loopholes` 是存放漏洞补丁 rpm 包的位置。另外每个版本还划分了 `iso/base/updates/addons/loophole` 5个子目录，`iso` 用于存放从安装介质拷贝出来的 rpm 包，`base` 是同步了官网的 base 源（仅 Kylin 有用），`updates` 是同步了官网的 updates 源（RHEL 存放了与当前主版本相同的最新版本安装介质拷贝出来的 rpm 包，如 RHEL7 就是 RHEL 7.9、RHEL8 就是 8.9（目前最新）），`addons` 存放第三方软件的 rpm 包，`loopholes` 存放漏洞补丁 rpm 包。
+
+## 其他说明
+
+plugins/callbacks 下的 `auto_tags.py` 是为了支持使用 `--tag` 来执行特定的 role，方便调试，脚本出处：[rkrzr/auto_tags.py](https://gist.github.com/rkrzr/f5387167fa7b4869e2dca8b713879562)
+
+```sh
+ansible-playbook playbook.yaml --tag=user,repo
+```
