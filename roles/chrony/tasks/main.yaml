@@ -1,0 +1,27 @@
+- name: enable chrony
+  service:
+    name: chronyd
+    enabled: true
+    state: started
+
+- name: delete /etc/chrony.conf file contains '^server.*' or '^pool' string line
+  lineinfile:
+    path: /etc/chrony.conf
+    regexp: "{{ item }}"
+    backup: yes
+    state: absent
+  with_items:
+    - "^server"
+    - "^pool"
+  changed_when: false
+  notify: restart chrony
+
+- name: add time server for /etc/chrony.conf file
+  lineinfile:
+    path: /etc/chrony.conf
+    line: "server {{ item.server }} iburst {{ 'prefer' if item.prefer is defined and item.prefer == True else '' }}"
+    state: present
+    backup: yes
+  with_items: "{{ chrony_servers }}"
+  changed_when: false
+  notify: restart chrony

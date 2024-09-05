@@ -1,0 +1,13 @@
+- service_facts:
+
+# https://stackoverflow.com/a/61552456
+# https://stackoverflow.com/a/58709262
+- name: stop and disable service
+  service:
+    name: "{{ item }}"
+    state: stopped
+    enabled: false
+  when: item in service_names
+  loop: "{{ disable_services }}"
+  vars:
+    service_names: "{{ ansible_facts.services | dict2items | map(attribute='value.name') | map('replace', '.service', '') | list }}"

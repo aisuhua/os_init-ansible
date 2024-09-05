@@ -1,0 +1,5 @@
+profile_timeout: 0
+profile_histfilesize: 10240
+profile_histsize: 2000
+profile_histtimeformat: '"`whoami` %F %T || "'
+profile_histauditfile: /var/log/history_audit.log

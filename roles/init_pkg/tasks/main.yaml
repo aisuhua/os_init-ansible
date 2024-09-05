@@ -1,0 +1,13 @@
+- name: update all packages
+  yum:
+    name: '*'
+    state: latest
+    update_cache: yes
+    use_backend: "{{ 'yum' if 'V7' in ansible_distribution_major_version else 'auto' }}"
+  vars:
+    ansible_command_timeout: 300
+
+- name: install init packages
+  yum: 
+    name: "{{ init_pkg_list }}"
+    use_backend: "{{ 'yum' if 'V7' in ansible_distribution_major_version else 'auto' }}"

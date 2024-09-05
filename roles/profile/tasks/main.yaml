@@ -1,0 +1,17 @@
+# https://github.com/ansible/ansible/issues/30226#issuecomment-433643224
+# https://blog.csdn.net/weixin_39945816/article/details/116892687
+# below command cat delete the log file:
+# chattr -a "{{ profile_histauditfile }}" && rm -f "{{ profile_histauditfile }}"
+- name: touch history audit file
+  file:
+    path: "{{ profile_histauditfile }}"
+    mode: 'a+w'
+    attributes: '+a'
+    state: touch
+    access_time: preserve
+    modification_time: preserve
+
+- name: config my profile
+  template:
+    src: myprofile.sh.j2
+    dest: /etc/profile.d/myprofile.sh    

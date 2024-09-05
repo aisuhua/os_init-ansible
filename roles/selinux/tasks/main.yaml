@@ -1,0 +1,10 @@
+- name: disable SELinux
+  selinux:
+    state: disabled
+
+- name: ensure SELinux is disabled on next reboot
+  lineinfile:
+    path: /etc/selinux/config
+    state: present
+    regexp: '^SELINUX='
+    line: 'SELINUX=disabled'

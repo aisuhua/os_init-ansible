@@ -1,0 +1,22 @@
+- name: set /etc/login.defs
+  lineinfile:
+    path: /etc/login.defs
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+    state: present
+    backup: true
+  with_items:
+    - regexp: "^PASS_MAX_DAYS" 
+      line: "PASS_MAX_DAYS {{ safe_pass_max_days }}"
+    - regexp: "^PASS_MIN_DAYS"
+      line: "PASS_MIN_DAYS {{ safe_pass_min_days }}"
+    - regexp: "^PASS_MIN_LEN"
+      line: "PASS_MIN_LEN {{ safe_pass_min_len }}"
+    - regexp: "^PASS_WARN_AGE"
+      line: "PASS_WARN_AGE {{ safe_pass_warn_days }}"
+    - regexp: "^LOG_UNKFAIL_ENAB"
+      line: "LOG_UNKFAIL_ENAB {{ safe_log_unkfail_enab }}"
+    - regexp: "^LOGIN_RETRIES"
+      line: "LOGIN_RETRIES {{ safe_login_retries }}"
+    - regexp: "^LASTLOG_ENAB"
+      line: "LASTLOG_ENAB {{ safe_lastlog_enab }}"

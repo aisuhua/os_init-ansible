@@ -1,0 +1,12 @@
+user_secretsalt: suhua123
+
+user_list:
+  - name: root
+    password: "Luck@u99"
+  - name: bakroot
+    password: "Luck@u99"
+    privilege: true
+  
+user_authorized_keys:
+  - user: bakroot
+    file: id_rsa.pub

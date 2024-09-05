@@ -1,0 +1,35 @@
+###Kylin Linux Advanced Server 10 - os repo###
+
+[ks10-adv-iso]
+name = Kylin Linux Advanced Server 10 - Iso
+baseurl = {{ repo_url }}/os/linux/kylin/v10sp2/iso/$basearch/
+gpgcheck = 0
+enabled = 1
+
+[ks10-adv-os]
+name = Kylin Linux Advanced Server 10 - Os 
+baseurl = {{ repo_url }}/os/linux/kylin/v10sp2/base/$basearch/
+gpgcheck = 0
+enabled = 1
+
+[ks10-adv-updates]
+name = Kylin Linux Advanced Server 10 - Updates
+baseurl = {{ repo_url }}/os/linux/kylin/v10sp2/updates/$basearch/
+gpgcheck = 0
+enabled = 1
+
+[ks10-adv-addons]
+name = Kylin Linux Advanced Server 10 - Addons
+baseurl = {{ repo_url }}/os/linux/kylin/v10sp2/addons/$basearch/
+gpgcheck = 0
+enabled = 1
+
+[ks10-adv-loopholes]
+name = Kylin Linux Advanced Server 10 - Loopholes
+baseurl = {{ repo_url }}/os/linux/kylin/v10sp2/loopholes/$basearch/
+gpgcheck = 0
+enabled = 1
+
+{% include "linux_common.repo.j2" %}
+
+{% include "kylin_common.repo.j2" %}

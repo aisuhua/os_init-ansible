@@ -1,0 +1,16 @@
+init_pkg_list:
+  - telnet
+  - net-tools
+  - nc
+  - unzip
+  - bc
+  - lrzsz
+  - chrony
+  - traceroute
+  - tar
+  - vim
+  - nmap
+  - wget
+  - sysstat
+  - iptables-services
+  #- ftp

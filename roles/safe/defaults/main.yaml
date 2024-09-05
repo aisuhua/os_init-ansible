@@ -1,0 +1,7 @@
+safe_pass_max_days: 99999
+safe_pass_min_days: 0
+safe_pass_min_len: 8
+safe_pass_warn_days: 7
+safe_log_unkfail_enab: yes
+safe_login_retries: 6
+safe_lastlog_enab: yes

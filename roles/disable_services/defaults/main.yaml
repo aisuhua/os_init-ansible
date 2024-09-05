@@ -1,0 +1,11 @@
+disable_services:
+  - cpus
+  - postfix
+  - pcscd
+  - smartd
+  - alsasound
+  - iscsitarget
+  - smb
+  - acpid
+  - firstboot
+  - firewalld

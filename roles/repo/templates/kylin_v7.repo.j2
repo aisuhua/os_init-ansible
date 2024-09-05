@@ -1,0 +1,35 @@
+###NeoKylin Linux Advanced Server 7 - os repo###
+
+[ns7-adv-iso]
+name = NeoKylin Linux Advanced Server 7 - Iso
+baseurl = {{ repo_url }}/os/linux/kylin/v7update6/iso/$basearch/
+gpgcheck = 0
+enabled = 1
+
+[ns7-adv-os]
+name = NeoKylin Linux Advanced Server 7 - Os 
+baseurl = {{ repo_url }}/os/linux/kylin/v7/base/$basearch/
+gpgcheck = 0
+enabled = 1
+
+[ns7-adv-updates]
+name = NeoKylin Linux Advanced Server 7 - Updates
+baseurl = {{ repo_url }}/os/linux/kylin/v7/updates/$basearch/
+gpgcheck = 0
+enabled = 1
+
+[ns7-adv-addons]
+name = NeoKylin Linux Advanced Server 7 - Addons
+baseurl = {{ repo_url }}/os/linux/kylin/v7/addons/$basearch/
+gpgcheck = 0
+enabled = 1
+
+[ns7-adv-loopholes]
+name = NeoKylin Linux Advanced Server 7 - Loopholes
+baseurl = {{ repo_url }}/os/linux/kylin/v7/loopholes/$basearch/
+gpgcheck = 0
+enabled = 1
+
+{% include "linux_common.repo.j2" %}
+
+{% include "kylin_common.repo.j2" %}

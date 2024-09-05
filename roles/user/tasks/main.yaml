@@ -1,0 +1,36 @@
+- name: add user 
+  user: 
+    name: "{{ item.name }}" 
+    password: "{{ item.password | password_hash('sha512', user_secretsalt | string) }}"
+    state: present
+  loop: "{{ user_list }}"
+
+- name: password expires
+  shell: "chage -M {{ item.expires }} {{ item.name }}" 
+  loop: "{{ user_list }}"
+  changed_when: false
+  when: 
+    - item.expires is defined
+    - item.expires > 0
+
+# https://stackoverflow.com/a/46723428
+- name: config /etc/sudoers
+  lineinfile: 
+    dest: /etc/sudoers 
+    regexp: '^{{ item.name }}\s+'
+    line: "{{ item.name }} ALL=(ALL) NOPASSWD: ALL"
+    state: present  
+    validate: /usr/sbin/visudo -cf %s
+  loop: "{{ user_list }}" 
+  when: 
+    - item.privilege is defined
+    - item.privilege | bool 
+
+# https://github.com/ansible/ansible/issues/3774#issuecomment-248041452
+- name: config authorized keys
+  authorized_key:
+    user: "{{ item.user }}"
+    state: present
+    key: "{{ lookup('file', '{{ item.file }}') }}"
+  loop: "{{ user_authorized_keys }}"
+  when: user_authorized_keys is defined

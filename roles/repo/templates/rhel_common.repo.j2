@@ -1,0 +1,20 @@
+
+# RHEL Common
+[rhel-common-updates]
+name=RHEL - Updates
+gpgcheck=0
+enabled=1
+baseurl={{ repo_url }}/os/linux/rhel/common-updates/$basearch/
+
+[rhel-common-addons]
+name=RHEL - Addons
+gpgcheck=0
+enabled=1
+baseurl={{ repo_url }}/os/linux/rhel/common-addons/$basearch/
+
+[rhel-common-loopholes]
+name=RHEL - Loopholes
+gpgcheck=0
+enabled=1
+baseurl={{ repo_url }}/os/linux/rhel/common-loopholes/$basearch/
+

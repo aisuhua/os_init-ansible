@@ -1,0 +1,24 @@
+---
+- name: os init
+  hosts: all
+  become: true
+  gather_facts: true
+
+  roles:
+    - init
+    - hostname
+    - timezone
+    - dns
+    - chrony
+    - user
+    - file
+    - profile
+    - repo
+    - init_pkg
+    - selinux
+    - iptables
+    - limit
+    - ssh
+    - safe
+    - disable_services
+    - cron

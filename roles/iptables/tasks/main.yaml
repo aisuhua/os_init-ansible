@@ -1,0 +1,9 @@
+- name: enable iptables
+  service:
+    name: iptables
+    enabled: true
+    state: started 
+
+- name: configure iptables
+  script: iptables.sh
+  changed_when: false

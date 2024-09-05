@@ -1,0 +1,180 @@
+(base) suhua@g7-7588:~$ tree /data/mirror -L 6
+/data/mirror
+└── os
+    └── linux
+        ├── common-addons
+        │   ├── aarch64
+        │   │   └── repodata
+        │   │       ├── 3e8c03a33bf4f088414905fa3d0c8d1b3557fad55433333fd4a3a1bd2edfe4bb-filelists.sqlite.bz2
+        │   │       ├── 401dc19bda88c82c403423fb835844d64345f7e95f5b9835888189c03834cc93-filelists.xml.gz
+        │   │       ├── 6bf9672d0862e8ef8b8ff05a2fd0208a922b1f5978e6589d87944c88259cb670-other.xml.gz
+        │   │       ├── 7046bd81dd3a1eb1654684b0db099834d37a245264eac0bdee2ae67d6135f77b-primary.sqlite.bz2
+        │   │       ├── c24fc9f4f158615c937d43f244a63b5752766a0b7194e2eb325ac2fe041fb982-other.sqlite.bz2
+        │   │       ├── dabe2ce5481d23de1f4f52bdcfee0f9af98316c9e0de2ce8123adeefa0dd08b9-primary.xml.gz
+        │   │       └── repomd.xml
+        │   └── x86_64
+        │       └── repodata
+        │           ├── 3e8c03a33bf4f088414905fa3d0c8d1b3557fad55433333fd4a3a1bd2edfe4bb-filelists.sqlite.bz2
+        │           ├── 401dc19bda88c82c403423fb835844d64345f7e95f5b9835888189c03834cc93-filelists.xml.gz
+        │           ├── 6bf9672d0862e8ef8b8ff05a2fd0208a922b1f5978e6589d87944c88259cb670-other.xml.gz
+        │           ├── 7046bd81dd3a1eb1654684b0db099834d37a245264eac0bdee2ae67d6135f77b-primary.sqlite.bz2
+        │           ├── c24fc9f4f158615c937d43f244a63b5752766a0b7194e2eb325ac2fe041fb982-other.sqlite.bz2
+        │           ├── dabe2ce5481d23de1f4f52bdcfee0f9af98316c9e0de2ce8123adeefa0dd08b9-primary.xml.gz
+        │           └── repomd.xml
+        ├── common-loopholes
+        │   ├── aarch64
+        │   │   └── repodata
+        │   │       ├── 3e8c03a33bf4f088414905fa3d0c8d1b3557fad55433333fd4a3a1bd2edfe4bb-filelists.sqlite.bz2
+        │   │       ├── 401dc19bda88c82c403423fb835844d64345f7e95f5b9835888189c03834cc93-filelists.xml.gz
+        │   │       ├── 6bf9672d0862e8ef8b8ff05a2fd0208a922b1f5978e6589d87944c88259cb670-other.xml.gz
+        │   │       ├── 7046bd81dd3a1eb1654684b0db099834d37a245264eac0bdee2ae67d6135f77b-primary.sqlite.bz2
+        │   │       ├── c24fc9f4f158615c937d43f244a63b5752766a0b7194e2eb325ac2fe041fb982-other.sqlite.bz2
+        │   │       ├── dabe2ce5481d23de1f4f52bdcfee0f9af98316c9e0de2ce8123adeefa0dd08b9-primary.xml.gz
+        │   │       └── repomd.xml
+        │   └── x86_64
+        │       └── repodata
+        │           ├── 3e8c03a33bf4f088414905fa3d0c8d1b3557fad55433333fd4a3a1bd2edfe4bb-filelists.sqlite.bz2
+        │           ├── 401dc19bda88c82c403423fb835844d64345f7e95f5b9835888189c03834cc93-filelists.xml.gz
+        │           ├── 6bf9672d0862e8ef8b8ff05a2fd0208a922b1f5978e6589d87944c88259cb670-other.xml.gz
+        │           ├── 7046bd81dd3a1eb1654684b0db099834d37a245264eac0bdee2ae67d6135f77b-primary.sqlite.bz2
+        │           ├── c24fc9f4f158615c937d43f244a63b5752766a0b7194e2eb325ac2fe041fb982-other.sqlite.bz2
+        │           ├── dabe2ce5481d23de1f4f52bdcfee0f9af98316c9e0de2ce8123adeefa0dd08b9-primary.xml.gz
+        │           └── repomd.xml
+        ├── common-updates
+        │   ├── aarch64
+        │   │   └── repodata
+        │   │       ├── 3e8c03a33bf4f088414905fa3d0c8d1b3557fad55433333fd4a3a1bd2edfe4bb-filelists.sqlite.bz2
+        │   │       ├── 401dc19bda88c82c403423fb835844d64345f7e95f5b9835888189c03834cc93-filelists.xml.gz
+        │   │       ├── 6bf9672d0862e8ef8b8ff05a2fd0208a922b1f5978e6589d87944c88259cb670-other.xml.gz
+        │   │       ├── 7046bd81dd3a1eb1654684b0db099834d37a245264eac0bdee2ae67d6135f77b-primary.sqlite.bz2
+        │   │       ├── c24fc9f4f158615c937d43f244a63b5752766a0b7194e2eb325ac2fe041fb982-other.sqlite.bz2
+        │   │       ├── dabe2ce5481d23de1f4f52bdcfee0f9af98316c9e0de2ce8123adeefa0dd08b9-primary.xml.gz
+        │   │       └── repomd.xml
+        │   └── x86_64
+        │       └── repodata
+        │           ├── 3e8c03a33bf4f088414905fa3d0c8d1b3557fad55433333fd4a3a1bd2edfe4bb-filelists.sqlite.bz2
+        │           ├── 401dc19bda88c82c403423fb835844d64345f7e95f5b9835888189c03834cc93-filelists.xml.gz
+        │           ├── 6bf9672d0862e8ef8b8ff05a2fd0208a922b1f5978e6589d87944c88259cb670-other.xml.gz
+        │           ├── 7046bd81dd3a1eb1654684b0db099834d37a245264eac0bdee2ae67d6135f77b-primary.sqlite.bz2
+        │           ├── c24fc9f4f158615c937d43f244a63b5752766a0b7194e2eb325ac2fe041fb982-other.sqlite.bz2
+        │           ├── dabe2ce5481d23de1f4f52bdcfee0f9af98316c9e0de2ce8123adeefa0dd08b9-primary.xml.gz
+        │           └── repomd.xml
+        ├── kylin
+        │   ├── common-addons
+        │   │   ├── aarch64
+        │   │   │   └── repodata
+        │   │   └── x86_64
+        │   │       └── repodata
+        │   ├── common-loopholes
+        │   │   ├── aarch64
+        │   │   │   └── repodata
+        │   │   └── x86_64
+        │   │       └── repodata
+        │   ├── common-updates
+        │   │   ├── aarch64
+        │   │   │   └── repodata
+        │   │   └── x86_64
+        │   │       └── repodata
+        │   ├── v10sp1
+        │   │   ├── addons
+        │   │   │   ├── aarch64
+        │   │   │   └── x86_64
+        │   │   ├── base
+        │   │   │   ├── aarch64
+        │   │   │   └── x86_64
+        │   │   ├── iso
+        │   │   │   └── x86_64
+        │   │   ├── loopholes
+        │   │   │   ├── aarch64
+        │   │   │   └── x86_64
+        │   │   └── updates
+        │   │       ├── aarch64
+        │   │       └── x86_64
+        │   ├── v10sp2
+        │   │   ├── addons
+        │   │   │   ├── aarch64
+        │   │   │   └── x86_64
+        │   │   ├── base
+        │   │   │   ├── aarch64
+        │   │   │   └── x86_64
+        │   │   ├── iso
+        │   │   │   └── x86_64
+        │   │   ├── loopholes
+        │   │   │   ├── aarch64
+        │   │   │   └── x86_64
+        │   │   └── updates
+        │   │       ├── aarch64
+        │   │       └── x86_64
+        │   ├── v7
+        │   │   ├── addons
+        │   │   │   ├── aarch64
+        │   │   │   └── x86_64
+        │   │   ├── base
+        │   │   │   ├── aarch64
+        │   │   │   └── x86_64
+        │   │   ├── loopholes
+        │   │   │   ├── aarch64
+        │   │   │   └── x86_64
+        │   │   └── updates
+        │   │       ├── aarch64
+        │   │       └── x86_64
+        │   └── v7update6
+        │       └── iso
+        │           └── x86_64
+        └── rhel
+            ├── 5
+            │   ├── addons
+            │   │   ├── aarch64
+            │   │   └── x86_64
+            │   ├── loopholes
+            │   │   ├── aarch64
+            │   │   └── x86_64
+            │   └── updates
+            │       ├── aarch64
+            │       └── x86_64
+            ├── 5.3
+            │   └── iso
+            │       └── x86_64
+            ├── 7
+            │   ├── addons
+            │   │   ├── aarch64
+            │   │   └── x86_64
+            │   ├── loopholes
+            │   │   ├── aarch64
+            │   │   └── x86_64
+            │   └── updates
+            │       ├── aarch64
+            │       └── x86_64
+            ├── 7.9
+            │   └── iso
+            │       └── x86_64
+            ├── 8
+            │   ├── addons
+            │   │   ├── aarch64
+            │   │   └── x86_64
+            │   ├── loopholes
+            │   │   ├── aarch64
+            │   │   └── x86_64
+            │   └── updates
+            │       ├── aarch64
+            │       └── x86_64
+            ├── 8.9
+            │   └── iso
+            │       └── x86_64
+            ├── common-addons
+            │   ├── aarch64
+            │   │   └── repodata
+            │   └── x86_64
+            │       └── repodata
+            ├── common-loopholes
+            │   ├── aarch64
+            │   │   └── repodata
+            │   └── x86_64
+            │       └── repodata
+            └── common-updates
+                ├── aarch64
+                │   └── repodata
+                └── x86_64
+                    └── repodata
+
+134 directories, 42 files

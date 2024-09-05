@@ -1,0 +1,10 @@
+export TMOUT={{ profile_timeout }}
+export HISTTIMEFORMAT={{ profile_histtimeformat }}
+export HISTFILESIZE={{ profile_histfilesize }}
+export HISTSIZE={{ profile_histsize }}
+{# https://medium.com/@truvis.thornton/commandline-auditing-using-different-tools-to-security-your-linux-server-and-environments-2fcd361142ef #}
+PROMPT_COMMAND='history -a'
+export HISTCONTROL=
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ; }"'echo -e $$\\t$USER\\t$SSH_CONNECTION\\t$HOSTNAME\\tscreen $WINDOW\\t`date +%D%t%T%t%Y%t%s`\\t$PWD"$(history 1)" >> {{ profile_histauditfile }}'
+shopt -s histappend
+readonly PROMPT_COMMAND

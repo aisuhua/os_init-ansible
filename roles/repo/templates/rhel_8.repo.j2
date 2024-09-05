@@ -1,0 +1,44 @@
+### RHEL8
+## ISO
+[rhel-{{ ansible_distribution_version }}-iso-baseos]
+name=Red Hat Enterprise Linux {{ ansible_distribution_version }} - ISO BaseOS
+gpgcheck=0
+enabled=1
+baseurl={{ repo_url }}/os/linux/rhel/{{ ansible_distribution_version }}/iso/$basearch/BaseOS/
+
+[rhel-{{ ansible_distribution_version }}-iso-appstream]
+name=Red Hat Enterprise Linux {{ ansible_distribution_version }} - ISO AppStream
+gpgcheck=0
+enabled=1
+baseurl={{ repo_url }}/os/linux/rhel/{{ ansible_distribution_version }}/iso/$basearch/AppStream/
+
+## Updates
+[rhel-{{ ansible_distribution_major_version }}-updates-baseos]
+name=Red Hat Enterprise Linux {{ ansible_distribution_major_version }} - Updates BaseOS
+gpgcheck=0
+enabled=1
+baseurl={{ repo_url }}/os/linux/rhel/{{ ansible_distribution_major_version }}/updates/$basearch/BaseOS/
+
+[rhel-{{ ansible_distribution_major_version }}-updates-appstream]
+name=Red Hat Enterprise Linux {{ ansible_distribution_major_version }} - Updates AppStream
+gpgcheck=0
+enabled=1
+baseurl={{ repo_url }}/os/linux/rhel/{{ ansible_distribution_major_version }}/updates/$basearch/AppStream/
+
+## Addons
+[Addons]
+name=Red Hat Enterprise Linux {{ ansible_distribution_major_version }} - Addons
+gpgcheck=0
+enabled=1
+baseurl={{ repo_url }}/os/linux/rhel/{{ ansible_distribution_major_version }}/addons/$basearch/
+
+## Loopholes
+[Loopholes]
+name=Red Hat Enterprise Linux {{ ansible_distribution_major_version }} - Loopholes
+gpgcheck=0
+enabled=1
+baseurl={{ repo_url }}/os/linux/rhel/{{ ansible_distribution_major_version }}/loopholes/$basearch/
+
+{% include "linux_common.repo.j2" %}
+
+{% include "rhel_common.repo.j2" %}

@@ -1,0 +1,5 @@
+chrony_servers:
+  - server: time1.aliyun.com
+    prefer: true
+  - server: time1.cloud.tencent.com
+  - server: ntp.ntsc.ac.cn

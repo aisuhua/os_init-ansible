@@ -1,0 +1,32 @@
+### RHEL 7
+## Iso
+[rhel-{{ ansible_distribution_version }}-iso]
+name=Red Hat Enterprise Linux {{ ansible_distribution_version }} - Iso
+gpgcheck=0
+enabled=1
+baseurl={{ repo_url }}/os/linux/rhel/{{ ansible_distribution_version }}/iso/$basearch/
+
+## Updates
+[rhel-{{ ansible_distribution_major_version }}-updates]
+name=Red Hat Enterprise Linux {{ ansible_distribution_major_version }} - Updates
+gpgcheck=0
+enabled=1
+baseurl={{ repo_url }}/os/linux/rhel/{{ ansible_distribution_major_version }}/updates/$basearch/
+
+## Addons
+[rhel-{{ ansible_distribution_major_version }}-addons]
+name=Red Hat Enterprise Linux {{ ansible_distribution_major_version }} - Addons
+gpgcheck=0
+enabled=1
+baseurl={{ repo_url }}/os/linux/rhel/{{ ansible_distribution_major_version }}/addons/$basearch/
+
+## Loopholes
+[rhel-{{ ansible_distribution_major_version }}-loopholes]
+name=Red Hat Enterprise Linux {{ ansible_distribution_major_version }} - Loopholes
+gpgcheck=0
+enabled=1
+baseurl={{ repo_url }}/os/linux/rhel/{{ ansible_distribution_major_version }}/loopholes/$basearch/
+
+{% include "linux_common.repo.j2" %}
+
+{% include "rhel_common.repo.j2" %}

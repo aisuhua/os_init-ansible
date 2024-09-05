@@ -1,0 +1,86 @@
+# remote server user and password
+ansible_user: root
+ansible_password: Luck@u99
+
+## module params
+repo_url: http://172.31.96.1
+
+timezone: Asia/Shanghai
+
+dns_servers:
+  - 223.5.5.5
+  - 119.29.29.98
+  - 180.76.76.76
+
+chrony_servers:
+  - server: time1.aliyun.com
+    prefer: true
+  - server: time1.cloud.tencent.com
+  - server: ntp.ntsc.ac.cn
+
+user_secretsalt: suhua123
+user_list:
+  - name: root
+    password: "Luck@u99"
+  - name: bakroot
+    password: "Luck@u99"
+    privilege: true
+# public key file should place in roles/user/files/
+user_authorized_keys:
+  - user: bakroot
+    file: id_rsa.pub
+
+file_dir_list:
+  - path: /opt/logs
+    mode: 1777
+
+profile_timeout: 0
+profile_histfilesize: 10240
+profile_histsize: 2000
+profile_histtimeformat: '"`whoami` %F %T || "'
+profile_histauditfile: /var/log/history_audit.log
+
+init_pkg_list:
+  - telnet
+  - net-tools
+  - nc
+  - unzip
+  - bc
+  - lrzsz
+  - chrony
+  - traceroute
+  - tar
+  - vim
+  - nmap
+  - wget
+  - sysstat
+  - iptables-services
+
+limit_soft_core: 102400
+limit_hard_core: 102400
+limit_soft_nofile: 65535
+limit_hard_nofile: 65535
+limit_soft_nproc: 65535
+limit_hard_nproc: 65535
+
+safe_pass_max_days: 99999
+safe_pass_min_days: 0
+safe_pass_min_len: 8
+safe_pass_warn_days: 7
+safe_log_unkfail_enab: yes
+safe_login_retries: 6
+safe_lastlog_enab: yes
+
+disable_services:
+  - cpus
+  - postfix
+  - pcscd
+  - smartd
+  - alsasound
+  - iscsitarget
+  - smb
+  - acpid
+  - firstboot
+  - firewalld
+
+cron_allow_everyone: true
